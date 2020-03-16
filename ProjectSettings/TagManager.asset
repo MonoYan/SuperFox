@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Collection
   - Item-Gem
-  - Enemies
+  - Enemy
+  - DeadLine
   layers:
   - Default
   - TransparentFX

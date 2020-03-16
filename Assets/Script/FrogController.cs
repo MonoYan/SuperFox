@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrogController : MonoBehaviour
+public class FrogController : Enemy
 {
     private Rigidbody2D rb;
-    private Animator Anim;
     private Collider2D coll;
     public Transform leftPoint, rightPoint;
     public LayerMask ground;
@@ -14,10 +13,10 @@ public class FrogController : MonoBehaviour
     private float leftX, rightX;
     public float jumpForce;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
-        Anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
 
 
@@ -28,14 +27,15 @@ public class FrogController : MonoBehaviour
         Destroy(rightPoint.gameObject);
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
         //Movement();    
         SwitchAnim();
     }
 
-    void Movement() {
+    void Movement()
+    {
         if (faceLeft)//左
         {
             if (coll.IsTouchingLayers(ground))
@@ -67,7 +67,8 @@ public class FrogController : MonoBehaviour
      
     }
 
-    void SwitchAnim() {
+    void SwitchAnim()
+    {
         if (Anim.GetBool("jumping")) {
             if (rb.velocity.y < 0.1) {
                 Anim.SetBool("jumping", false);
@@ -79,6 +80,7 @@ public class FrogController : MonoBehaviour
             Anim.SetBool("idle", true);
         }
     }
-    
+
+
 }
 

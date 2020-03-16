@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EagleController : MonoBehaviour
+public class EagleController : Enemy
 {
     public Rigidbody2D rb;
     private Collider2D coll;
@@ -12,8 +12,9 @@ public class EagleController : MonoBehaviour
     private float upY, downY;
     public float speed;
     public float flyForce;
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         upY = up.position.y;
