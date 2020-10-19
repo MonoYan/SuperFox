@@ -16,7 +16,7 @@
 - [x] 敌人
 - [x] 音效 & 对话框
 - [x] 菜单
-- [x] 第二关场景
+- [ ] 第二关场景
 
 - [ ] 结算页面
 
@@ -32,7 +32,13 @@
 
 ![Player](GIF/Preview2.gif)
 
+## Material Statement
 
+素材来自Unity Asset Store，所有权来自Ansimuz。
+
+## Lincense
+
+[MIT](https://github.com/nishanths/license/blob/master/LICENSE)
 
 
 
